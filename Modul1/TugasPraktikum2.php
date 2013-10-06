@@ -14,8 +14,8 @@ and open the template in the editor.
         <div style="margin-left: 100px; margin-right: 100px; text-align: center">
         <form method="post" action="TugasPraktikum2_a.php">
             <h2>
-            Baris : <input name="RowsTotal" type="text" id="RowsTotal">
-            Kolom : <input name="ColsTotal" type="text" id="ColsTotal">
+            Kolom : <input name="Kolom" type="text" id="Kolom">
+            Cell : <input name="Cell" type="text" id="Cell">
             </h2>
             <input type="submit" name="Generate" value="Proses">               
         </div>

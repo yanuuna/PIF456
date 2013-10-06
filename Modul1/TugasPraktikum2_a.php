@@ -16,20 +16,25 @@ and open the template in the editor.
         <?php
         $rw = 1;
         $cols = 1;
-        $cells = 1;
+        $c=1;
         ?>
         
-        <?php $rows = (int) $_POST["RowsTotal"]; ?>
-        <?php $columns = (int) $_POST["ColsTotal"]; ?>
+        <?php $kolom = (int) $_POST["Kolom"]; ?>
+        <?php $cells = (int) $_POST["Cell"]; ?>
         
         <?php
-        $width = $columns * 50;
+        $width = $kolom * 70;
         echo "<table width=".$width." border=1>";
-        for($rw=1; $rw<=$rows; $rw++){
+        while($rw != $cells){
             echo "<tr>";
-            for($cols=1; $cols<=$columns; $cols++){
-                echo "<td><div align=center>".$cells."</div></td>";
-                $cells++;
+            $rw++;  
+            for($cols=1; $cols<=$kolom; $cols++){ 
+                if($c<=$cells){
+                    echo "<td><div align=center>".$c."</div></td>";   
+                    $c++;                              
+                } else {
+                    $rw=$cells;
+                }                                                                               
             }
             echo "</tr>";
         }
