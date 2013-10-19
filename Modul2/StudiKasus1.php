@@ -8,11 +8,11 @@
         <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
             Pekerjaan : 
             <select name="job">
-                <option value="Mahasiswa" <?php if($_POST['job']=='Mahasiswa') echo 'selected="selected"'; ?>> Mahasiswa </option>
-                <option value="ABRI" <?php if($_POST['job']=='ABRI') echo 'selected="selected"'; ?>> ABRI </option>
-                <option value="PNS" <?php if($_POST['job']=='PNS') echo 'selected="selected"'; ?>> PNS </option>
-                <option value="Swasta" <?php if($_POST['job']=='Swasta') echo 'selected="selected"'; ?>> Swasta </option>
-                <option value="Wirausaha" <?php if($_POST['job']=='Wirausaha') echo 'selected="selected"'; ?>> Wirausaha </option>
+                <option value="Mahasiswa" <?php if(isset($_POST['job'])=='Mahasiswa' && $_POST['job']=='Mahasiswa') echo 'selected="selected"'; ?>> Mahasiswa </option>
+                <option value="ABRI" <?php if(isset($_POST['job'])=='ABRI'&& $_POST['job']=='ABRI') echo 'selected="selected"'; ?>> ABRI </option>
+                <option value="PNS" <?php if(isset($_POST['job'])=='PNS' && $_POST['job']=='PNS') echo 'selected="selected"'; ?>> PNS </option>
+                <option value="Swasta" <?php if(isset($_POST['job'])=='Swasta' && $_POST['job']=='Swasta') echo 'selected="selected"'; ?>> Swasta </option>
+                <option value="Wirausaha" <?php if(isset($_POST['job'])=='Wirausaha' && $_POST['job']=='Wirausaha') echo 'selected="selected"'; ?>> Wirausaha </option>
             </select><br>                
             <input type="submit" value="OK">
         </form>
