@@ -38,6 +38,13 @@ function data_handler($root){
 					}else{
 						show_admin_data($root);
 					}
+					?>
+
+					<script type="text/javascript">
+				document.location.href="<?php echo $root;?>";
+			</script>
+
+					<?php
 					break;
 				default:
 					show_admin_data($root);
@@ -89,7 +96,7 @@ function show_admin_data($root){ ?>
 					<td align="center">
 					|<a href ="<?php echo $root;?>&amp;act=edit&amp;id=<?php echo $id;?>">
 					Edit</a> | 
-					<a href ="<?php echo $root;?>&amp;act=del&amp;id=<?php echo $id;?>"> Hapus
+					<a href ="<?php echo $root;?>&amp;act=del&amp;id=<?php echo $id;?>" onclick="return konfirmasi('<?php echo $row[0]; ?> dengan Nama <?php echo $row[1]; ?>')"> Hapus</a>
 					</td>
 				</tr>
 				<?php
@@ -147,7 +154,7 @@ function data_editor($root, $id = 0){
 			$res = mysql_query("INSERT INTO mahasiswa VALUES ('".$nim."', '" .$nama."', '" .$alamat."')");
 			if($res){ ?>
 			<script type="text/javascript">
-				document.location.href="<?php echo $root;?>";
+			document.location.href="<?php echo $root;?>";
 			</script>
 		<?php
 		}else{
